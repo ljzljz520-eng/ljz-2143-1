@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>管理 · 叫号系统</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="page">
+  <h1>叫号系统 · 管理台</h1>
+  <div class="card" id="overview"></div>
+  <div class="card">
+    <div class="toolbar" style="align-items:center">
+      <strong>指令生命周期</strong>
+      <select id="filter">
+        <option value="">全部</option>
+        <option value="SAVED">已保存</option>
+        <option value="DELIVERED">终端已接收</option>
+        <option value="CONFIRMED">现场已确认</option>
+        <option value="pending">待核对（播报未确认）</option>
+      </select>
+      <span class="muted">已保存 → 终端已接收 → 现场已确认；崩溃导致无法确认时进入「待核对」，可人工重播或人工确认</span>
+    </div>
+    <table>
+      <thead><tr>
+        <th>时间</th><th>类型</th><th>窗口</th><th>号码</th><th>状态</th><th>接收/确认时间</th><th>操作</th>
+      </tr></thead>
+      <tbody id="commands"></tbody>
+    </table>
+  </div>
+</div>
+<script src="/common.js"></script>
+<script src="/admin.js"></script>
+</body>
+</html>

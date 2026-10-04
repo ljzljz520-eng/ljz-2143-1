@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="0.5" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff7ed" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#fff7ed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1230" cy="220" r="330" fill="url(#sun)"/>
+  <g fill="#ffffff" opacity="0.16">
+    <circle cx="180" cy="700" r="120"/>
+    <circle cx="420" cy="760" r="70"/>
+    <circle cx="1420" cy="640" r="150"/>
+    <rect x="640" y="620" width="300" height="300" rx="40" transform="rotate(18 790 770)"/>
+  </g>
+  <g font-family="'PingFang SC','Microsoft YaHei',sans-serif" fill="#ffffff">
+    <text x="110" y="200" font-size="92" font-weight="800" opacity="0.95">秋季服务节</text>
+    <text x="114" y="290" font-size="40" opacity="0.9">取号有序 · 叫号即到 · 服务有礼</text>
+    <text x="114" y="360" font-size="28" opacity="0.75">请留意大屏幕与语音播报，过号请至柜台重新安排</text>
+  </g>
+  <g fill="#ffffff" opacity="0.22">
+    <path d="M0 820 Q 400 740 800 810 T 1600 790 V 900 H 0 Z"/>
+  </g>
+</svg>

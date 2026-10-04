@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>柜台端 · 叫号</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="page">
+  <h1>柜台端</h1>
+  <div class="card">
+    当前窗口：
+    <select id="counter-select"></select>
+    <span id="counter-status" class="chip open">营业中</span>
+    <span id="net" class="muted"></span>
+  </div>
+  <div id="offline-banner" class="banner offline" hidden>
+    已断网：领号 / 叫下一号 不可用（号码由服务器集中分配）；「完成服务」「暂停/恢复」将暂存，联网后自动同步。
+  </div>
+  <div id="queued-banner" class="banner queued" hidden></div>
+
+  <div class="card">
+    <div class="muted">当前服务</div>
+    <div class="big-current" id="current-seq">—</div>
+    <div class="muted" id="current-meta"></div>
+  </div>
+
+  <div class="toolbar">
+    <button id="btn-issue" class="ok">领号（发新票）</button>
+    <button id="btn-call">叫下一号</button>
+    <button id="btn-recall" class="ghost">重播叫号</button>
+    <button id="btn-complete" class="ok">完成服务</button>
+    <button id="btn-pause" class="warn">暂停窗口</button>
+  </div>
+  <div id="msg" class="muted"></div>
+
+  <div class="card">
+    <div class="muted">等待队列（<span id="waiting-count">0</span>）</div>
+    <div id="waiting-list"></div>
+  </div>
+</div>
+<script src="/common.js"></script>
+<script src="/counter.js"></script>
+</body>
+</html>

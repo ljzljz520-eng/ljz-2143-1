@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>门店叫号 · 展示窗</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="display">
+  <!-- 海报背景；解码失败时由 JS 加 .bg-fallback 降级为渐变底色 -->
+  <img id="poster" src="/poster.svg" alt="">
+  <header class="display-header">
+    <div>🏪 门店叫号</div>
+    <div><span id="clock"></span> <span id="net-badge">在线</span></div>
+  </header>
+  <main class="board" id="board"></main>
+  <div class="waiting-strip" id="waiting-strip"></div>
+  <!-- 待核对：设备重启/崩溃后，已接收但未确认播报的指令在这里等人工处理 -->
+  <aside class="pending-panel" id="pending-panel" hidden>
+    <h3>⚠ 待核对播报（可能已播出过，请人工确认）</h3>
+    <div id="pending-list"></div>
+  </aside>
+  <script src="/common.js"></script>
+  <script src="/display.js"></script>
+</body>
+</html>
