@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>叫号管理台</title>
+<style>
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; margin:1.5rem; background:#f4f6fa; }
+  h1{font-size:1.4rem} h2{font-size:1.1rem;margin-bottom:.4rem}
+  .row{display:flex;gap:1rem;flex-wrap:wrap}
+  .card{background:#fff;border-radius:10px;padding:1rem 1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);flex:1;min-width:280px}
+  table{border-collapse:collapse;width:100%;font-size:.92rem}
+  th,td{padding:.35rem .5rem;border-bottom:1px solid #eee;text-align:left}
+  .badge{display:inline-block;padding:.1rem .55rem;border-radius:999px;font-size:.82rem}
+  .st-saved{background:#eceff1}.st-delivered{background:#fff8e1}
+  .st-played{background:#e3f2fd}.st-confirmed{background:#e8f5e9}
+  tr.stale{background:#fff3f0}
+  .tag{color:#d84315;font-weight:700;margin-left:.4rem}
+  button{padding:.2rem .7rem;border:none;border-radius:6px;background:#1c4b82;color:#fff;cursor:pointer}
+  .paused{color:#b26a00;font-weight:700}
+</style>
+</head>
+<body>
+<h1>叫号管理台 <small id="now" style="font-weight:400;color:#888"></small></h1>
+<div class="row">
+  <div class="card"><h2>窗口</h2><table id="counters"></table></div>
+  <div class="card"><h2>等待队列（含跨日）</h2><table id="waiting"></table></div>
+</div>
+<div class="card" style="margin-top:1rem">
+  <h2>叫号指令（状态分级：已保存 → 终端已接收 → 已播报 → 现场已确认；超时未播报标记「待核对」）</h2>
+  <table id="commands"></table>
+</div>
+<script src="/static/admin.js"></script>
+</body>
+</html>

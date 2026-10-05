@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>柜台工作台</title>
+<style>
+  body { font-family: "PingFang SC","Microsoft YaHei",sans-serif; margin: 2rem; background:#f4f6fa; }
+  h1 { font-size: 1.4rem; }
+  .card { background:#fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem;
+          box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .current-num { font-size: 3.4rem; font-weight: 800; }
+  button { font-size: 1.05rem; padding: .6rem 1.2rem; margin: .25rem; border: none;
+           border-radius: 8px; cursor: pointer; background:#1c4b82; color:#fff; }
+  button.warn { background:#b26a00; } button.gray { background:#666; }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  #msg { min-height: 1.6rem; color:#b71c1c; }
+  #net { color:#b71c1c; font-weight:600; }
+  .badge { display:inline-block; padding:.1rem .55rem; border-radius: 999px; font-size:.85rem; }
+  .st-saved{background:#eceff1}.st-delivered{background:#fff8e1}.st-played{background:#e3f2fd}.st-confirmed{background:#e8f5e9}
+</style>
+</head>
+<body>
+<h1 id="title">柜台工作台</h1>
+<div id="net"></div>
+<div class="card">窗口状态：<b id="status">—</b> ｜ 等待人数：<b id="waiting">—</b></div>
+<div class="card">
+  <div>当前服务对象</div>
+  <div class="current-num" id="current">—</div>
+  <div>最近指令状态：<span id="cmd-state" class="badge">无</span></div>
+</div>
+<div class="card">
+  <button id="btn-next">叫下一号（领号）</button>
+  <button id="btn-recall">重播叫号</button>
+  <button id="btn-confirm">确认到场</button>
+  <button id="btn-done" class="gray">办结</button>
+  <button id="btn-pause" class="warn">暂停窗口</button>
+</div>
+<div id="msg"></div>
+<script src="/static/counter.js"></script>
+</body>
+</html>

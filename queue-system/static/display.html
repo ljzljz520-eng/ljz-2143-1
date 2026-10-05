@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>叫号展示窗</title>
+<link rel="stylesheet" href="/static/display.css">
+</head>
+<body>
+<div id="poster-badge" class="poster-badge hidden">⚠ 海报加载失败，已启用降级背景</div>
+<button id="enable-audio" class="enable-audio">🔊 点击启用语音播报</button>
+<main class="stage">
+  <section class="now-panel" id="now-panel">
+    <div class="now-title">正 在 叫 号</div>
+    <div id="big-number" class="big-number">—</div>
+    <div id="big-counter" class="big-counter">请留意窗口提示</div>
+  </section>
+  <aside class="side-panel">
+    <h2>各窗口服务中</h2>
+    <ul id="serving-list" class="serving-list"></ul>
+    <div class="waiting">等待人数：<span id="waiting-count">0</span></div>
+    <div id="net-status" class="net-status"></div>
+  </aside>
+</main>
+<script src="/static/fallback.js"></script>
+<script src="/static/display.js"></script>
+</body>
+</html>

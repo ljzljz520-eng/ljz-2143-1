@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123a6d"/>
+      <stop offset="0.55" stop-color="#1c5a9e"/>
+      <stop offset="1" stop-color="#0b2547"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.9">
+      <stop offset="0" stop-color="#ffd54a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffd54a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <circle cx="1330" cy="170" r="230" fill="#ffffff" opacity="0.06"/>
+  <circle cx="220" cy="760" r="300" fill="#ffffff" opacity="0.05"/>
+  <circle cx="1450" cy="720" r="140" fill="#ffd54a" opacity="0.10"/>
+  <text x="120" y="200" font-family="sans-serif" font-size="92" fill="#ffffff" opacity="0.9">夏季服务季</text>
+  <text x="122" y="290" font-family="sans-serif" font-size="40" fill="#ffd54a" opacity="0.95">取号有序 · 服务有心</text>
+</svg>

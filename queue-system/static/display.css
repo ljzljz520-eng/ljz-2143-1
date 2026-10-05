@@ -1,0 +1,65 @@
+:root {
+  --panel-bg: rgba(6, 18, 34, 0.85);
+  --fg: #ffffff;
+  --accent: #ffd54a;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: var(--fg);
+  /* 关键：海报为第一层，渐变兜底为第二层；海报加载/解码失败时渐变仍在 */
+  background-color: #203a43;
+  background-image: url("/static/poster.svg"),
+    linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: cover, cover;
+  background-position: center, center;
+  overflow: hidden;
+}
+/* JS 探测到解码失败：去掉海报层，只留渐变，并把面板调得更不透明 */
+body.poster-failed {
+  background-image: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+body.poster-failed .now-panel { background: rgba(2, 8, 20, 0.96); }
+
+.stage { display: flex; height: 100vh; padding: 3vmin; gap: 3vmin; }
+.now-panel {
+  flex: 2; display: flex; flex-direction: column; justify-content: center;
+  align-items: center; border-radius: 2vmin; background: var(--panel-bg);
+  box-shadow: 0 0 4vmin rgba(0,0,0,.5);
+}
+.now-title { font-size: 4vmin; letter-spacing: 1vmin; opacity: .85; }
+/* 号码永远在近实色底 + 纯白高对比文字上：背景降级不影响可读性 */
+.big-number {
+  font-size: 24vmin; font-weight: 800; line-height: 1.15;
+  background: #000; color: #fff; padding: 0 6vmin; border-radius: 2vmin;
+  text-shadow: 0 0 2vmin rgba(255,213,74,.6);
+}
+.big-counter { font-size: 6vmin; margin-top: 2vmin; color: var(--accent); }
+.flash { animation: flash 0.6s ease-in-out 6; }
+@keyframes flash { 50% { background: #7a6200; } }
+
+.side-panel {
+  flex: 1; background: var(--panel-bg); border-radius: 2vmin;
+  padding: 3vmin; display: flex; flex-direction: column; font-size: 3.2vmin;
+}
+.serving-list { list-style: none; padding: 0; margin: 0; flex: 1; }
+.serving-list li {
+  display: flex; justify-content: space-between; padding: 1.2vmin 0;
+  border-bottom: 1px solid rgba(255,255,255,.2); font-size: 4vmin;
+}
+.serving-list .num { font-weight: 700; background:#000; padding: 0 1.5vmin; border-radius: 1vmin; }
+.waiting { font-size: 3.6vmin; margin-top: 2vmin; }
+.net-status { min-height: 4vmin; color: #ff8a80; font-size: 2.8vmin; }
+
+.poster-badge {
+  position: fixed; top: 1vmin; right: 1vmin; z-index: 10;
+  background: #b71c1c; color: #fff; padding: .8vmin 2vmin;
+  border-radius: 1vmin; font-size: 2.4vmin;
+}
+.enable-audio {
+  position: fixed; bottom: 2vmin; right: 2vmin; z-index: 10;
+  font-size: 3vmin; padding: 1.5vmin 3vmin; border-radius: 1.5vmin;
+  border: none; background: var(--accent); cursor: pointer;
+}
+.hidden { display: none !important; }
